@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  validates :name, persence: true
+  validates :name, persence: true, length: {maximum:30}
 end
