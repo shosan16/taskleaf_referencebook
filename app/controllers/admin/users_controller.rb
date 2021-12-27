@@ -37,6 +37,12 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to admin_users_path, notice: "#{@user.name}を削除しました"
+  end
+
   private
 
   def user_params
